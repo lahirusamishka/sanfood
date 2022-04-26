@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "332583301773",
+    "project_id": "sanfood-d0c93",
+    "storage_bucket": "sanfood-d0c93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332583301773:android:44f30fc5da600c7c4b68c4",
+        "android_client_info": {
+          "package_name": "com.example.sanfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "332583301773-cj52jssufmae3pelo94i40mqmn4ltbqn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATK-D6SPpTp5n61oxT7WJHsNLqqniPv7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "332583301773-cj52jssufmae3pelo94i40mqmn4ltbqn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
