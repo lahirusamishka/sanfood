@@ -1,8 +1,4 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -13,9 +9,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  @override
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _amountController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _amountController = TextEditingController();
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
@@ -23,7 +18,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sanfood'),
+        title: const Text('Sanfood'),
       ),
       body: Center(
         child: Column(
@@ -31,17 +26,17 @@ class _HomeState extends State<Home> {
           children: [
             TextFormField(
               controller: _nameController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: 'Enter Name',
                   filled: true,
                   fillColor: Colors.white),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             TextFormField(
               controller: _amountController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: 'Enter Amount',
                   filled: true,
                   fillColor: Colors.white),
@@ -50,6 +45,23 @@ class _HomeState extends State<Home> {
                 onPressed: () => {saveData()}, child: const Text("Save")),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+        ],
+        selectedItemColor: Colors.amber[800],
       ),
     );
   }
@@ -61,9 +73,9 @@ class _HomeState extends State<Home> {
     CollectionReference users = FirebaseFirestore.instance.collection('orders');
 
     users.add({
-      'amount': 'asdasd',
+      'amount': amount,
       'date': 'asdasd',
-      'name': 'ssadasdasd',
+      'name': name,
       'note': 'sd',
       'price': '123',
       'type': 'aasd'
