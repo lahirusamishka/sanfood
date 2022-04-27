@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "332583301773-hirf4mtlutfevk1f97gigk3pv7mehfv4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sanfood",
+            "certificate_hash": "812aebb0d1dfd6bf4ad808f36c45c8066eb4fa5a"
+          }
+        },
+        {
           "client_id": "332583301773-cj52jssufmae3pelo94i40mqmn4ltbqn.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "332583301773-cj52jssufmae3pelo94i40mqmn4ltbqn.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "332583301773-n68lcjacr4af2ims5q6072ovtbmo96aq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sanfood"
+              }
             }
           ]
         }
