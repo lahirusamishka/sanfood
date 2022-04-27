@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'dart:convert' show json;
 import 'package:http/http.dart' as http;
+import 'package:sign_button/sign_button.dart';
 
 GoogleSignIn _googleSignIn = GoogleSignIn(
   scopes: <String>[
@@ -87,7 +89,9 @@ class _LogInState extends State<LogIn> {
     try {
       await _googleSignIn.signIn();
     } catch (error) {
-      print(error);
+      if (kDebugMode) {
+        print(error);
+      }
     }
   }
 
@@ -123,11 +127,18 @@ class _LogInState extends State<LogIn> {
       return Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          const Text('You are not currently signed in.'),
-          ElevatedButton(
-            child: const Text('SIGN IN'),
-            onPressed: _handleSignIn,
-          ),
+          const Text('Sign in with google'),
+          SignInButton(
+              buttonType: ButtonType.google,
+              imagePosition: ImagePosition.right,
+              //[buttonSize] You can also use this in combination with [width]. Increases the font and icon size of the button.
+              buttonSize: ButtonSize.large,
+              btnTextColor: Colors.grey,
+              btnColor: Colors.white,
+              width: 140,
+              //[width] Use if you change the text value.
+              btnText: 'Google',
+              onPressed: _handleSignIn),
         ],
       );
     }
@@ -136,12 +147,9 @@ class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Google Sign In'),
-        ),
         body: ConstrainedBox(
-          constraints: const BoxConstraints.expand(),
-          child: _buildBody(),
-        ));
+      constraints: const BoxConstraints.expand(),
+      child: _buildBody(),
+    ));
   }
 }
